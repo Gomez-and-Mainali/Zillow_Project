@@ -1,1 +1,4 @@
 Adding gitignore
+env.py
+__pycache__
+*.csv
