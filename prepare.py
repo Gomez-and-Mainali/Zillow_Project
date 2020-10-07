@@ -2,6 +2,8 @@ import wrangle
 
 import acquire
 
+import pandas as pd
+
 
 def prep_data():
     zillow = acquire.get_data()
@@ -14,12 +16,12 @@ def prep_data():
     
     zillow = zillow[~zillow.regionidzip.isna()]
     
-    zillow = zillow.drop(columns = ['propertylandusedesc', 'transactiondate', 'id', 'parcelid', 'calculatedbathnbr])
+    zillow = zillow.drop(columns = ['propertylandusedesc', 'fullbathcnt','transactiondate', 'id', 'parcelid', 'calculatedbathnbr'])
     
     
     zillow = zillow.rename(columns = {'bathroomcnt':'numberofbathrooms', 'bedroomcnt':'numberofbedrooms', 
                          'regionidcounty':'countyid', 'regionidzip':'zipcode', 'finishedsquarefeet12':'size_in_squarefeet', 
-                        'fullbathcnt':'fullbath', 'lotsizesquarefeet':'lotsize', 'taxamount': 'tax', 
+                         'lotsizesquarefeet':'lotsize', 'taxamount': 'tax', 
                         'taxvaluedollarcnt':'property_value'})
     
     q1 = zillow.property_value.quantile(0.25)
