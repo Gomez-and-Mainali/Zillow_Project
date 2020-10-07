@@ -18,8 +18,7 @@ he months of May and June of 2017.**
 
 ## Phases:
 - **Planning**
-  -  
-  - 
+  - Outline steps that must be taken to complete each phase of the pipeline
 - **Acqusition**
   - With credentials to login, acquire data from the CodeUp database.
   - Create a cache function to store the data on the local machine 
