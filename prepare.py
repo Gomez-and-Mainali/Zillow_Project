@@ -2,6 +2,8 @@ import wrangle
 
 import acquire
 
+import pandas as pd
+
 
 def prep_data():
     zillow = acquire.get_data()
@@ -14,7 +16,7 @@ def prep_data():
     
     zillow = zillow[~zillow.regionidzip.isna()]
     
-    zillow = zillow.drop(columns = ['propertylandusedesc', 'transactiondate', 'id', 'parcelid', 'calculatedbathnbr])
+    zillow = zillow.drop(columns = ['propertylandusedesc','fullbath', 'transactiondate', 'id', 'parcelid', 'calculatedbathnbr'])
     
     
     zillow = zillow.rename(columns = {'bathroomcnt':'numberofbathrooms', 'bedroomcnt':'numberofbedrooms', 
