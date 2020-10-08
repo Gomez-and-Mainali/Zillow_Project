@@ -28,6 +28,8 @@ def get_connection(db, user=user, host=host, password=password):
 
 # query = sql statement to get the desired data
 def get_data():
+    '''This function reads in a sql query and the retrieves the data from the database using the get connection function. Converts the data in csv file and returns it'''
+    
     query = '''select  p2.id, p2.parcelid, p2.bathroomcnt, p2.bedroomcnt, p2.calculatedbathnbr, p2.regionidcounty, p2.regionidzip,
 p2.finishedsquarefeet12, p2.fips, p2.fullbathcnt,p2.lotsizesquarefeet, plt.propertylandusedesc, p17.transactiondate,
 p2.taxamount, p2.taxvaluedollarcnt
