@@ -14,6 +14,14 @@ he months of May and June of 2017.**
 - **lotsize:** Size of the property lot
 - **finishedsquarefeet:** Size of the property/house
 - **taxvaluedollarcnt:** total value of the property as assessed by the county for tax purpose
+- **RMSE:** Root mean square error, meaning the measure of errors. The Lower the RMSE the better the model if lower than the baseline RMSE.
+- **Baseline RMSE:** The baseline RMSE is the figure the model is trying to be beat. This is typically the mean or median of the target variable.
+- **Linear Regression:** The relationship between the dependent and independent variable.
+- **LassoLars:** This is the Lasso model along with the Least angle regression to find the best fit line passing thru the designated features.
+- **Polynomial Features:** Approximates the relationship of the independent and dependent variable that fits to a polynomial equation.
+- **MinMax Scaler:** Transforms a specified feature to a scale between 0 and 1
+- **Pearson R Test:** A statistical test to measure the relationship between two variables.
+- **Double T-Test:** Used to determine the relationship between two independent variables.
 
 
 ## Phases:
