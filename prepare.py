@@ -6,6 +6,9 @@ import pandas as pd
 
 
 def prep_data():
+    '''This function does all the steps necessary to prepare the zillow dataframe and returns it as a train, test, and validate
+    split'''
+    
     zillow = acquire.get_data()
     
     zillow = zillow[~zillow.fullbathcnt.isna()]
@@ -46,7 +49,13 @@ def prep_data():
     zillow = pd.concat([zillow, dummies], axis = 1)
                                     
     zillow = zillow.drop(columns = 'County')
-                                    
+    
+    zillow = zillow[zillow.numberofbedrooms<7]
+
+    zillow = zillow[zillow.numberofbathrooms < 6]
+
+    zillow = zillow[zillow.numberofbedrooms!=0]
+
                                      
                                     
     train, test, validate = wrangle.split_data(zillow)
